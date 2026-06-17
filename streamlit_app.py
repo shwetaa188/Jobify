@@ -5,6 +5,7 @@ from data.skills import skills_list
 
 
 st.title("AI Resume Analyzer")
+st.caption(";) For best experience, use a desktop browser.")
 
 uploaded_file = st.file_uploader("Upload your Resume (PDF)", type=["pdf"])
 job_description = st.text_area("Paste Job Description Here")
