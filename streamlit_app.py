@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.graph_objects as go
-from utils import extract_text_from_pdf, clean_text, extract_skills, calculate_match, missing_skills
+from utils import extract_text_from_pdf, clean_text, extract_skills, calculate_match, missing_skills, get_ai_advice
 from data.skills import skills_list
 
 
@@ -57,7 +57,7 @@ if uploaded_file and job_description:
     st.subheader("All skills found in your Resume")
     render_badges(resume_skills, "#ADD8E6")  
 
-    st.subheader("📊 Skills Breakdown")
+    st.subheader(" Skills Breakdown")
 
     fig = go.Figure(data=[go.Pie(
          labels=["Matched", "Missing"],
@@ -73,6 +73,12 @@ if uploaded_file and job_description:
     )
 
     st.plotly_chart(fig) 
+
+    st.divider()
+    st.subheader(":) AI Career Advice")
+    with st.spinner("Analyzing your profile..."):
+        advice = get_ai_advice(matched, missing, job_skills)
+    st.write(advice)
     
      
           
