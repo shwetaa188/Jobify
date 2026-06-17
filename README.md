@@ -5,7 +5,7 @@ An AI-powered resume analyzer and job matcher.
 -  Upload your resume (PDF)
 -  Paste any Job Description
 -  Get match percentage + skill gap analysis
--  AI-powered suggestions (coming soon)
+-  AI-powered suggestions 
 -  Job aggregator with 24-36hr filter (coming soon)
 
 # Tech Stack
